@@ -1,0 +1,31 @@
+.wp-pagenavi {
+	display: flex;
+	justify-content: flex-start;
+	margin-top: -19px;
+
+	@include breakpoint(large only) {
+		padding-left: 1em;
+	}
+
+	a {
+		font-weight: 600;
+		font-size: 18px;
+		line-height: div(26, 18);
+		letter-spacing: 0.2em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid $primary-color;
+		width: 146px;
+		height: 59px;
+		text-align: center;
+		margin-right: 14px;
+		transition: all .5s ease;
+
+		@include hover-slide(transparent, $primary-color);
+
+		&:hover {
+			color: $white;
+		}
+	}
+}

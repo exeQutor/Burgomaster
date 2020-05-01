@@ -1,0 +1,190 @@
+//
+// Custom Burgomaster Mixins
+//
+
+@function image-url( $url ) {
+    @return url('../images/#{$url}');
+}
+
+// alias to calc-line-height
+@function div( $psd-line-height, $psd-font-size ) {
+  @return $psd-line-height / $psd-font-size;
+}
+
+@mixin text-hover($color, $underlined: true, $bottom: 3px, $height: 1px) {
+  color: $color;
+  position: relative;
+  transition: all .5s ease;
+
+  &::after {
+    content: '';
+
+    @if $underlined {
+      width: 100%;
+    } @else {
+      width: 0;
+    }
+
+    height: $height;
+    background-color: $color;
+    position: absolute;
+    bottom: $bottom;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .5s ease;
+  }
+
+  &:hover {
+    &::after {
+      @if $underlined {
+        width: 0;
+      } @else {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@mixin hover-slide($color: null, $hover-color: null) {
+  position: relative;
+  transition: all .5s ease;
+  z-index: 0;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &:before {
+    width: 100%;
+
+    @if $color {
+      background-color: $color;
+    } @else {
+      background-color: $primary-color;
+    }
+  }
+
+  &:after {
+    width: 0;
+
+    @if $hover-color {
+      background-color: $hover-color;
+    } @else {
+      background-color: $secondary-color;
+    }
+
+    transition: all .5s ease;
+  }
+
+  &:hover {
+    background-color: transparent;
+
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+@mixin hover-underline($color, $bottom: null, $size: null, $reverse: null) {
+  position: relative;
+	transition: all .5s ease;
+
+  &:hover {
+    color: $color;
+
+    &:after {
+      @if $reverse {
+        width: 0;
+      } @else {
+        width: 100%;
+      }
+    }
+  }
+
+  &:after {
+    content: '';
+
+    @if $reverse {
+      width: 100%;
+    } @else {
+      width: 0;
+    }
+
+    @if $size {
+      height: $size;
+    } @else {
+      height: 1px;
+    }
+
+    display: inline-block;
+    background: $color;
+    position: absolute;
+
+    @if $bottom {
+      bottom: $bottom;
+    } @else {
+      bottom: 0;
+    }
+
+    left: 0;
+    transition: all .5s ease;
+  }
+}
+
+@mixin hover-button($bc, $tc, $fs: null, $fw: null, $ls: null, $padding: null) {
+  background-color: $bc;
+  color: $tc;
+
+  @if $fw {
+    font-weight: $fw;
+  }
+
+  @if $fs {
+    font-size: $fs;
+  } @else {
+    font-size: $global-font-size;
+  }
+
+  @if $ls {
+    letter-spacing: $ls;
+  }
+
+  @if $padding {
+    padding: $padding;
+  } @else {
+    padding: $button-padding;
+  }
+
+  display: inline-block;
+  border: 2px solid transparent;
+  transition: all .5s ease;
+
+  @include breakpoint(small down) {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  &:hover {
+    background-color: transparent !important;
+    color: $bc;
+    border-color: $bc;
+  }
+}
+
+@mixin shadow-box() {
+  box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}

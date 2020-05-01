@@ -62,3 +62,14 @@
 // Motion UI
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+// Burgomaster mixins, including image-url() fix
+@import "bm-mixins";
+
+// Load LFS generic styles
+@import "bm-gravityforms";
+@import "bm-accordion";
+@import "bm-wp-pagenavi";
+
+// Components
+@import "components/header";

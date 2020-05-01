@@ -3,7 +3,7 @@
   init_common();
   init_meanmenu();
   init_stellar();
-  // init_scrollto();
+  init_scrollto();
   // init_testimonial_slider();
   // init_partner_slider();
   // init_header_hide();
