@@ -9,6 +9,8 @@ class Burgosoft {
     // add_filter('show_admin_bar', '__return_false');
     add_action('wp_enqueue_scripts', array($this, 'wp_enqueue_scripts'));
 
+    add_post_type_support( 'page', 'excerpt' );
+
     if (function_exists('acf_add_options_page')) {
       acf_add_options_page();
     }
