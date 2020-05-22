@@ -8,6 +8,7 @@ class Burgosoft {
 
     // add_filter('show_admin_bar', '__return_false');
     add_action('wp_enqueue_scripts', array($this, 'wp_enqueue_scripts'));
+    add_action('after_setup_theme', [$this, 'after_setup_theme']);
 
     add_post_type_support( 'page', 'excerpt' );
 
@@ -73,6 +74,10 @@ class Burgosoft {
 		// 	wp_enqueue_script('velocity-ui', 'https://cdnjs.cloudflare.com/ajax/libs/velocity/1.3.0/velocity.ui.js', ['bm-theme', 'jquery'], false, true);
 		// 	wp_enqueue_script('home', get_template_directory_uri() . '/assets/js/home.js', ['bm-theme', 'jquery'], false, true);
 		// }
+  }
+
+  function after_setup_theme() {
+    add_theme_support('title-tag');
   }
 
   function register_nav_menus() {
