@@ -9,12 +9,4 @@
 </head>
 <body <?php body_class(); ?>>
 
-<?php
-
-if (is_front_page()) {
-  get_template_part('parts/header-home');
-} else {
-  get_template_part('parts/header-inner');
-}
-
-?>
+<?php get_template_part('parts/header') ?>

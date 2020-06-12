@@ -8,9 +8,11 @@ the_post();
 <main class="main">
 	<section class="blog-single">
 		<div class="grid-container">
-			<article class="article-content">
-				<?php get_template_part('parts/blog', 'single') ?>
-			</article>
+			<div class="grid-x">
+				<div class="cell">
+					<?php get_template_part('parts/blog', 'single') ?>
+				</div>
+			</div>
 		</div>
 	</section>
 </main>

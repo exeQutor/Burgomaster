@@ -17,4 +17,4 @@ class BM_Div_Shortcode {
   }
 }
 
-// new BM_Div_Shortcode;
+new BM_Div_Shortcode;

@@ -1,14 +1,15 @@
 (function($){
 
   init_common();
+  init_custom_sticky();
   init_meanmenu();
-  init_stellar();
-  init_scrollto();
+  // init_stellar();
+  // init_scrollto();
   // init_testimonial_slider();
   // init_partner_slider();
   // init_header_hide();
   // init_header_hide2();
-  init_header_hide3();
+  // init_header_hide3();
   // init_dummy_load_more();
 
 
@@ -17,6 +18,21 @@
     $(document).foundation();
 
     $('p').has('img').addClass('has-image');
+  }
+
+  function init_custom_sticky() {
+    window.onscroll = function() {bm_sticky()};
+
+    var header = document.getElementById("sticky-header");
+    var sticky = header.offsetTop + 400;
+
+    function bm_sticky() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
   }
 
   function init_meanmenu() {

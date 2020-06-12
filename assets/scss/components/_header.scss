@@ -1,8 +1,19 @@
 .header {
-	background-color: $primary-color;
-	color: $white;
+	background-color: $white;
+	color: $black;
+}
+
+.header-nav {}
+
+.header-nav-list {
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+	margin: 0;
 
 	a {
-		color: $white;
+		font-weight: 700;
+		color: $black;
+		text-transform: uppercase;
 	}
 }

@@ -1,9 +1,10 @@
-<header class="header header--inner">
+<header id="sticky-header" class="header">
 	<div class="grid-container">
 		<div class="grid-x">
 			<div class="cell large-6">
-				<h1 class="header-title"><a href="<?php bloginfo('url') ?>"><?php bloginfo('name') ?></a></h1>
-				<p class="header-tagline"><?php bloginfo('description') ?></p>
+				<div class="header-logo">
+					<a href="<?php bloginfo('url') ?>"><img src="<?php echo bm_images_url('logo.png') ?>" alt=""></a>
+				</div>
 			</div>
 
 			<div class="cell large-6">

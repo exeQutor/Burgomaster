@@ -10,7 +10,7 @@ class BM_ZF_Grid_Shortcode {
   function row($atts, $content) {
   	$content = preg_replace( "/\[\/column\](\<br \/\>|\<\/p\>.?\<p\>).?\[column/s", '[/column][column', $content );
 
-   	return '<div class="row">' . do_shortcode($content) . '</div>';
+   	return '<div class="grid-x">' . do_shortcode($content) . '</div>';
   }
 
   function column($atts, $content) {
@@ -27,7 +27,7 @@ class BM_ZF_Grid_Shortcode {
 
     $sizes = 'small-' . $small . ' medium-' . $medium . ' large-' . $large;
 
-    return '<div class="columns ' . $sizes . '">' . do_shortcode($content) . '</div>';
+    return '<div class="cell ' . $sizes . '">' . do_shortcode($content) . '</div>';
   }
 }
 
