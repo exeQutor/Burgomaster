@@ -6,15 +6,7 @@ the_post();
 ?>
 
 <main class="main">
-	<section class="blog-single">
-		<div class="grid-container">
-			<div class="grid-x">
-				<div class="cell">
-					<?php get_template_part('parts/blog', 'single') ?>
-				</div>
-			</div>
-		</div>
-	</section>
+	<?php get_template_part('parts/blog', 'single') ?>
 </main>
 
 <?php get_footer() ?>

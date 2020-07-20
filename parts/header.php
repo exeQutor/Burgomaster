@@ -1,10 +1,14 @@
 <header id="sticky-header" class="header">
 	<div class="grid-container">
 		<div class="grid-x">
-			<div class="cell large-6">
+			<div class="cell large-3">
 				<div class="header-logo">
-					<a href="<?php bloginfo('url') ?>"><img src="<?php echo bm_images_url('logo.png') ?>" alt=""></a>
+					<a href="<?php bloginfo('url') ?>"><img src="<?php echo bm_images_url('logo.svg') ?>" alt=""></a>
 				</div>
+			</div>
+
+			<div class="cell large-3">
+
 			</div>
 
 			<div class="cell large-6">

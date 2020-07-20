@@ -6,7 +6,7 @@ class BM_Custom_Excerpt {
 	private $label;
 
 	function __construct() {
-		$this->excerpt_length = 21;
+		$this->length = 58;
 		$this->label = 'Read more';
 
 		add_action('wp', [$this, 'wp']);
@@ -14,9 +14,17 @@ class BM_Custom_Excerpt {
 
 	function wp() {
 		if (is_home()) {
-			add_filter('excerpt_more', [$this, 'excerpt_more'], $this->length);
-			add_filter('get_the_excerpt', [$this, 'get_the_excerpt'], $this->length);
+			add_filter('excerpt_length', [$this, 'excerpt_length']);
+			add_filter('excerpt_more', [$this, 'excerpt_more']);
+
+			if ($this->label) {
+				add_filter('get_the_excerpt', [$this, 'get_the_excerpt']);
+			}
 		}
+	}
+
+	function excerpt_length($length) {
+		return $this->length;
 	}
 
 	function excerpt_more($more) {
@@ -25,7 +33,7 @@ class BM_Custom_Excerpt {
 
 	function get_the_excerpt($excerpt) {
 	  $post = get_post();
-	  $excerpt .= '... <a class="read-more" href="'. get_permalink($post->ID) . '">' . $label . '</a>';
+	  $excerpt .= ' <a class="read-more" href="'. get_permalink($post->ID) . '">' . $this->label . '</a>';
 	  return $excerpt;
 	}
 }

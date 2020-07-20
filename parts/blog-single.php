@@ -1,7 +1,15 @@
-<article class="article-body">
-	<h2><?php the_title() ?></h2>
+<section class="blog blog--single">
+	<div class="grid-container">
+		<div class="grid-x">
+			<div class="cell">
+				<article class="article">
+					<h2 class="page-title"><?php the_title() ?></h2>
 
-	<div class="entry">
-		<?php the_content() ?>
+					<div class="page-content">
+						<?php the_excerpt() ?>
+					</div>
+				</article>
+			</div>
+		</div>
 	</div>
-</article>
+</section>

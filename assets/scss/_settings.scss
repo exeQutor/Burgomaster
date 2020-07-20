@@ -3,6 +3,7 @@
 //
 //  Table of Contents:
 //
+//   0. Custom
 //   1. Global
 //   2. Breakpoints
 //   3. The Grid
@@ -62,6 +63,12 @@
 
 @import 'util/util';
 
+// 0. Custom
+// ---------
+
+$header-height: 100px;
+$footer-height: 100px;
+
 // 1. Global
 // ---------
 
@@ -78,7 +85,7 @@ $foundation-palette: (
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #000000; //#0a0a0a;
+$black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;

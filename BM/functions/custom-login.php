@@ -6,7 +6,7 @@ class BM_Custom_Login {
 	private $bg;
 
 	function __construct() {
-		$this->logo = get_template_directory_uri() . '/assets/images/logo.png';
+		$this->logo = get_template_directory_uri() . '/assets/images/logo.svg';
 		$this->bg = get_template_directory_uri() . '/assets/images/bg.png';
 
 		add_action('login_head', [$this, 'login_head']);

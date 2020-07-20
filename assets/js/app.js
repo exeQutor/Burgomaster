@@ -1,7 +1,7 @@
 (function($){
 
   init_common();
-  init_custom_sticky();
+  init_sticky_header();
   init_meanmenu();
   // init_stellar();
   // init_scrollto();
@@ -20,7 +20,7 @@
     $('p').has('img').addClass('has-image');
   }
 
-  function init_custom_sticky() {
+  function init_sticky_header() {
     window.onscroll = function() {bm_sticky()};
 
     var header = document.getElementById("sticky-header");
@@ -37,6 +37,7 @@
 
   function init_meanmenu() {
     $('.sticky-header .header-nav').meanmenu({
+      meanMenuContainer: '.header-mobile-nav',
       meanScreenWidth: 1023,
       meanRemoveAttrs: true,
       // removeElements: '.header-phone'
