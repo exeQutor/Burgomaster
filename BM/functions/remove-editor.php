@@ -7,6 +7,7 @@ class BM_Remove_Editor {
 	function __construct() {
 		$this->pages = array(
 			'overrides/home.php',
+			'overrides/builder.php',
 		);
 
 		add_action('init', [$this, 'init']);

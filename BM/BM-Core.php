@@ -6,7 +6,8 @@ class Burgosoft {
     $this->register_nav_menus();
     $this->add_theme_support();
 
-    // add_filter('show_admin_bar', '__return_false');
+    add_filter('show_admin_bar', '__return_false');
+    // add_filter('show_admin_bar', [$this, 'show_admin_bar']);
     add_action('wp_enqueue_scripts', array($this, 'wp_enqueue_scripts'));
     add_action('after_setup_theme', [$this, 'after_setup_theme']);
 
@@ -14,6 +15,14 @@ class Burgosoft {
 
     if (function_exists('acf_add_options_page')) {
       acf_add_options_page();
+    }
+  }
+
+  function show_admin_bar() {
+    if (is_front_page()) {
+      return false;
+    } else {
+      return true;
     }
   }
 
