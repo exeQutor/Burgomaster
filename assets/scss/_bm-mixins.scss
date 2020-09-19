@@ -1,6 +1,40 @@
-//
-// Custom Burgomaster Mixins
-//
+// ----------------
+//    NEW MIXINS & FUNCTIONS
+// ----------------
+
+@function bm-multiplier($breakpoint) {
+  @return rem-calc(map-get($breakpoints, $breakpoint)) / $global-width;
+}
+
+@function _m($size) {
+  @return $size * bm-multiplier(medium);
+}
+
+@function _l($size) {
+  @return $size * bm-multiplier(large);
+}
+
+@function _xl($size) {
+  @return $size * bm-multiplier(xlarge);
+}
+
+@function _xxl($size) {
+  @return $size * bm-multiplier(xxlarge);
+}
+
+@function _xxxl($size) {
+  @return $size * bm-multiplier(ylarge);
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// ----------------
+//    OLD MIXINS & FUNCTIONS
+// ----------------
 
 @function image-url( $url ) {
     @return url('../images/#{$url}');
